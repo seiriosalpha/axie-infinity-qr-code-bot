@@ -34,7 +34,7 @@ def submit_signature(signed_message, message, account_address):
     Function to submit the signature and get authorization
     """
     # An example of a requestBody needed
-    request_body = {"operationName":"CreateAccessTokenWithSignature","variables":{"input":{"mainnet":"ethereum","owner":"User's Eth Wallet Address","message":"User's Raw Message","signature":"User's Signed Message"}},"query":"mutation CreateAccessTokenWithSignature($input: SignatureInput!) {\n  createAccessTokenWithSignature(input: $input) {\n    newAccount\n    result\n    accessToken\n    __typename\n  }\n}\n"}
+    request_body = {"operationName":"CreateAccessTokenWithSignature","variables":{"input":{"mainnet":"ronin","owner":"User's Eth Wallet Address","message":"User's Raw Message","signature":"User's Signed Message"}},"query":"mutation CreateAccessTokenWithSignature($input: SignatureInput!) {\n  createAccessTokenWithSignature(input: $input) {\n    newAccount\n    result\n    accessToken\n    __typename\n  }\n}\n"}
     # Remplace in that example to the actual signed message
     request_body['variables']['input']['signature'] = signed_message['signature'].hex()
     # Remplace in that example to the actual raw message
